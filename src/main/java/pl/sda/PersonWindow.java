@@ -44,6 +44,7 @@ public class PersonWindow extends JFrame {
 
         //zadania po kliknięciu na listę niech na dole w JLabel, albo textarea i tam ładnie wyświetli dane podświetlonej osoby
         //4 przyciski sortuj po imieniu, nazwisku, dacie urodzenia, po wszystkim
+        //jComboBox jako wybór metody sortowania
 
         jList.setListData(personList.toArray());
         button.addMouseListener(new MouseListener() {
