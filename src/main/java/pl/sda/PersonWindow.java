@@ -15,7 +15,7 @@ public class PersonWindow extends JFrame {
     public PersonWindow() throws HeadlessException {
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(600, 400);
+        setSize(700, 400);
         setLayout(null);
         JButton button = new JButton("Kliknij mnie");
         button.setSize(200, 50);
@@ -28,7 +28,7 @@ public class PersonWindow extends JFrame {
         add(textField);
 
         JList jList = new JList<>();
-        jList.setSize(500,200);
+        jList.setSize(500,150);
         jList.setLocation(0,100);
         add(jList);
 
@@ -41,6 +41,42 @@ public class PersonWindow extends JFrame {
         personList.add(new Person("Łukasz", "Mickiewicz", 1970));
         personList.add(new Person("Edward", "Wojciechowski", 1970));
         personList.add(new Person("Adam", "Kowalski", 1970));
+        jList.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("naciśnięta myszka");
+                System.out.println(personList.indexOf(e.getID()));
+                System.out.println(e.getX());
+                System.out.println(e.;
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+
+        JLabel jLabel = new JLabel();
+        jLabel.setSize(500,50);
+        jLabel.setLocation(0,290);
+        add(jLabel);
+        jLabel.setVisible(true);
 
         //zadania po kliknięciu na listę niech na dole w JLabel, albo textarea i tam ładnie wyświetli dane podświetlonej osoby
         //4 przyciski sortuj po imieniu, nazwisku, dacie urodzenia, po wszystkim
