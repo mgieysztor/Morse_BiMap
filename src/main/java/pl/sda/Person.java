@@ -16,9 +16,14 @@ public class Person implements Comparable<Person> {
 
     @Override
     public String toString() {
-        return "Osoba o imieniu: " + firstName
-                + ", nazwisku: " + lastName
-                + " i roku urodzenia: " + birthYear + ".";
+        return firstName + ", " + lastName + ", " + birthYear;
+    }
+
+    public String toComplexString() {
+        return "Osoba" + System.lineSeparator() +
+                "\tImię: " + firstName + System.lineSeparator() +
+                "\tNazwisko: " + lastName + System.lineSeparator() +
+                "\trok urodzenia: " + birthYear + ".";
     }
 
 //    @Override
