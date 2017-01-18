@@ -38,10 +38,12 @@ public class Streams {
 
 
         final int[] sum = {0};
-        //reduce  - sprawdzić, nie miałem obrazu
+
         IntStream.range(0, 100).forEach(x -> sum[0] += x); //w foreach przypisywać możemy tylko do zmiennej final,
                                                             // przypisanie tablicy się nie zmienia, zmienia się jej zawartość
         System.out.println(sum[0]);
+        //reduce  - sprawdzić, nie miałem obrazu
+        int reduce = IntStream.range(0, 100).reduce(0, (sumR, x) -> sumR += x);
 
 
         List<Person> personList = new ArrayList<>();
@@ -141,6 +143,12 @@ public class Streams {
                 .collect(joining(";", "IMIONA: ", " KONIEC"));
         System.out.println("=========joining========");
         System.out.println(joined);
+
+        String joined2
+                = personList.stream().map(x -> x.getFirstName())
+                .peek(x -> System.out.println(x))
+                .collect(joining("; ", "IMIONA: ", " KONIEC"));
+
 
         //pick sprawdzić
     }
